@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 
 const vestidoSchema = new mongoose.Schema({
   nombre: String,
+  tipo:String,
   descripcion: String,
   talles: [String],
   color: String,
