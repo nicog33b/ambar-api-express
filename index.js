@@ -1,6 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
-
+const cors = require('cors');
 //BODY-P
 const bodyParser = require('body-parser');
 
@@ -24,8 +24,11 @@ mongoose.connect(mongoConfig.url)
 // Inicializar Express
 const app = express();
 
+
 // Middleware para parsear JSON
 app.use(bodyParser.json());
+//Cors
+app.use(cors());
 
 // Usar las rutas definidas en el archivo .env
 app.use(process.env.VESTIDO_ROUTE, vestidoRouter);
